@@ -1,5 +1,6 @@
 package com.gabrielvicente.dsclients.service;
 
+import com.gabrielvicente.dsclients.dto.ClientDTO;
 import com.gabrielvicente.dsclients.entity.Client;
 import com.gabrielvicente.dsclients.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ClientService {
@@ -15,7 +17,8 @@ public class ClientService {
     private ClientRepository repository;
 
     @Transactional(readOnly = true)
-    public List<Client> findAll() {
-        return repository.findAll();
+    public List<ClientDTO> findAll() {
+        List<Client> clients = repository.findAll();
+        return clients.stream().map(ClientDTO::new).collect(Collectors.toList());
     }
 }
