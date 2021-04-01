@@ -1,2 +1,11 @@
-INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Jon Doe', '30141513004', 2000.0, TIMESTAMP WITH TIME ZONE '2001-07-13T20:50:07.12345Z', 2);
-INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Sansa Stark', '40701138009', 3000.0, TIMESTAMP WITH TIME ZONE '1990-07-13T20:50:07.12345Z', 1);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Jon Doe', '30141513004', 2000.0, TIMESTAMP WITH TIME ZONE '2001-04-13T20:50:07.12345Z', 5);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Sansa Stark', '40701138009', 5000.0, TIMESTAMP WITH TIME ZONE '1999-02-13T20:50:07.12345Z', 4);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Son Goku', '45344258054', 4500.0, TIMESTAMP WITH TIME ZONE '1992-03-13T20:50:07.12345Z',2);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Darth Vader', '41223975029', 3400.0, TIMESTAMP WITH TIME ZONE '1998-05-13T20:50:07.12345Z', 2);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Uzumaki Naruto', '20229860087', 3700.0, TIMESTAMP WITH TIME ZONE '1993-07-13T20:50:07.12345Z', 2);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Walter White', '24408284084', 10000.0, TIMESTAMP WITH TIME ZONE '1995-07-13T20:50:07.12345Z', 1);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Peter Parker', '01205098062', 3600.0, TIMESTAMP WITH TIME ZONE '1997-08-13T20:50:07.12345Z', 3);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Son Gohan', '70409722049', 5000.0, TIMESTAMP WITH TIME ZONE '1998-09-13T20:50:07.12345Z', 1);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Arya Stark', '72082738043', 4100.0, TIMESTAMP WITH TIME ZONE '1995-12-13T20:50:07.12345Z', 0);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Uchiha Sasuke', '21848282036', 3300.0, TIMESTAMP WITH TIME ZONE '1996-11-13T20:50:07.12345Z', 1);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Lara Croft', '59337695090', 30000.0, TIMESTAMP WITH TIME ZONE '2010-12-13T20:50:07.12345Z', 0);
