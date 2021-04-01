@@ -1,0 +1,2 @@
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Jon Doe', '30141513004', 2000.0, TIMESTAMP WITH TIME ZONE '2001-07-13T20:50:07.12345Z', 2);
+INSERT INTO client (name, cpf, income, birth_date, children) VALUES ('Sansa Stark', '40701138009', 3000.0, TIMESTAMP WITH TIME ZONE '1990-07-13T20:50:07.12345Z', 1);
