@@ -39,4 +39,10 @@ public class ClientResource {
 
         return ResponseEntity.created(uri).body(persistedClient);
     }
+
+    @PutMapping(value = {"/{id}"})
+    public ResponseEntity<ClientDTO> update(@RequestBody ClientDTO dto, @PathVariable Long id) {
+        service.update(dto, id);
+        return ResponseEntity.noContent().build();
+    }
 }

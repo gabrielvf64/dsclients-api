@@ -1,6 +1,6 @@
 package com.gabrielvicente.dsclients.resource.exception;
 
-import com.gabrielvicente.dsclients.service.exception.EntityNotFoundException;
+import com.gabrielvicente.dsclients.service.exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -12,8 +12,8 @@ import java.time.Instant;
 @ControllerAdvice
 public class ResourceExceptionHandler {
 
-    @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<StandardError> handleEntityNotFoundException(EntityNotFoundException e, HttpServletRequest request) {
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<StandardError> handleEntityNotFoundException(ResourceNotFoundException e, HttpServletRequest request) {
         StandardError standardError = new StandardError();
         HttpStatus notFound = HttpStatus.NOT_FOUND;
         standardError.setTimeStamp(Instant.now());
