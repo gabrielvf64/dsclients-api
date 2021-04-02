@@ -3,6 +3,7 @@ package com.gabrielvicente.dsclients.service;
 import com.gabrielvicente.dsclients.dto.ClientDTO;
 import com.gabrielvicente.dsclients.entity.Client;
 import com.gabrielvicente.dsclients.repository.ClientRepository;
+import com.gabrielvicente.dsclients.service.exception.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +27,7 @@ public class ClientService {
     @Transactional(readOnly = true)
     public ClientDTO findById(Long id) {
         Optional<Client> optionalClient = repository.findById(id);
-        Client client = optionalClient.get();
+        Client client = optionalClient.orElseThrow(() -> new EntityNotFoundException("Entity not found"));
         return new ClientDTO(client);
     }
 }
