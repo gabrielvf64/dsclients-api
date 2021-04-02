@@ -5,6 +5,7 @@ import com.gabrielvicente.dsclients.entity.Client;
 import com.gabrielvicente.dsclients.repository.ClientRepository;
 import com.gabrielvicente.dsclients.service.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -50,7 +51,11 @@ public class ClientService {
     }
 
     public void delete(Long id) {
-        repository.deleteById(id);
+        try {
+            repository.deleteById(id);
+        } catch (EmptyResultDataAccessException e) {
+            throw new ResourceNotFoundException("Id " + id + " not found");
+        }
     }
 
     private void convertToEntity(ClientDTO dto, Client client) {
