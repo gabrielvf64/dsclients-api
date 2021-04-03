@@ -6,12 +6,12 @@ import com.gabrielvicente.dsclients.repository.ClientRepository;
 import com.gabrielvicente.dsclients.service.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ClientService {
@@ -20,9 +20,9 @@ public class ClientService {
     private ClientRepository repository;
 
     @Transactional(readOnly = true)
-    public List<ClientDTO> findAll() {
-        List<Client> clients = repository.findAll();
-        return clients.stream().map(ClientDTO::new).collect(Collectors.toList());
+    public Page<ClientDTO> findAll(PageRequest pageRequest) {
+        Page<Client> clients = repository.findAll(pageRequest);
+        return clients.map(ClientDTO::new);
     }
 
     @Transactional(readOnly = true)
